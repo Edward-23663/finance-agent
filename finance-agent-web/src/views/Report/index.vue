@@ -68,10 +68,6 @@ const ticker = ref('Unknown Ticker');
 const activeTab = ref('summary');
 const { connect } = useSSE(traceId);
 
-const hasAnyContent = computed(() => {
-    return Object.keys(analysisStore.reportContentMap).length > 0 || analysisStore.progressPercentage > 5;
-});
-
 const statusTagType = computed(() => {
     switch (analysisStore.taskStatus) {
         case TaskStatus.RUNNING: return 'primary';
