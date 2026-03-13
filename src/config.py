@@ -16,6 +16,7 @@ class Settings(BaseSettings):
 
     api_host: str = "0.0.0.0"
     api_port: int = 8000
+    api_key: str = ""
 
     max_retries: int = 3
     retry_delay: int = 5
@@ -23,6 +24,11 @@ class Settings(BaseSettings):
     log_level: str = "INFO"
 
     tushare_token: str = ""
+
+    llm_provider: str = "siliconflow"
+    llm_api_key: str = "sk-tclymzhektdcvclfvhpnqmkkardkbrsjbklgmtofhsjrmxfu"
+    llm_base_url: str = "https://api.siliconflow.cn/v1/chat/completions"
+    llm_model: str = "Pro/zai-org/GLM-4.7"
 
     class Config:
         env_file = ".env"
